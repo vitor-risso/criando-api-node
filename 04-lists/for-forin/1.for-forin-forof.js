@@ -5,12 +5,21 @@ async function main (){
     const result = await service.getPerson('a') ;
     const names = []
     
-    console.time('list-time')
-    for(let i = 0; i < result.results.length; i++ ){
-      const person = result.results[i];
+    // console.time('list-time')
+    // for(let i = 0; i < result.results.length; i++ ){
+    //   const person = result.results[i];
+    //   names.push(person.name)
+    // }
+    // console.timeEnd('list-time')
+
+    // for(let i in result.results){
+    //   const person = result.results[i];
+    //   names.push(person.name)
+    // }
+
+    for(person of result.results){
       names.push(person.name)
     }
-    console.timeEnd('list-time')
     console.log(names)
 
   } catch (error) {
